@@ -1,0 +1,19 @@
+<% if flash[:error] %>
+  <br>
+  <strong>
+    <%= flash[:error] %>
+  </strong>
+  <br>
+  <br>
+<% end %>
+<%= form_tag login_path, :class=> 'form-signin' do %>
+<h2>Login</h2>
+<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+<%= label_tag :email, nil, :class => 'sr-only' %>
+<%= email_field_tag :email, '',:class => 'form-control', :placeholder => 'E-mail' %>
+<br>
+<%= label_tag :password, nil, :class => 'sr-only' %>
+<%= password_field_tag :password, '',:class => 'form-control', :placeholder => 'password' %>
+<br>
+<%= submit_tag("Login", :class=>"btn btn-lg btn-primary btn-block") %>
+<% end %>
