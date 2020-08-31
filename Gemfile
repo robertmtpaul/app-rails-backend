@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -38,6 +41,12 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'better_errors', '~> 2.7', '>= 2.7.1'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen'
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
@@ -55,3 +64,8 @@ gem 'pry-byebug'
 gem 'rack-cors'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'bulma-clean-theme', '~> 0.9'
+gem 'bulma-rails', '~> 0.9.0'
+gem 'bulma-extensions-rails'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'devise', '~> 4.7', '>= 4.7.2'

@@ -1,0 +1,2 @@
+module PostPhotosUsersHelper
+end
