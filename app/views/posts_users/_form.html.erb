@@ -22,14 +22,10 @@
   </div>
 
   <div class="liked_field">
-    <%= f.label :vote_post %><br>
-    <%= f.select :liked_by_users, Post.likes.keys %>
+    <%= form.label :vote_post %><br>
+    <%= form.number_field :vote_post %>
   </div>
 
-  <div class="disliked_field">
-    <%= f.label :vote_post %><br>
-    <%= f.select :disliked_by_users, Post.dislike.keys %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

@@ -13,13 +13,14 @@
   </head>
 
   <body>
-
     <h1> Social media app </h1>
     <nav>
 
     <% if @current_user.present? %>
       Hello, <%= @current_user.name %> |
       <%= link_to 'Logout', login_path, method: 'delete' %>
+
+      <% elsif @current_user.present? && @current_user.admin === true %>
 
       <% else %>
       <%= link_to 'Create user', new_user_path %>

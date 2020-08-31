@@ -21,15 +21,17 @@
     <%= form.number_field :user_id %>
   </div>
 
-  <div class="like_field">
-    <%= f.label :likes %><br>
-    <%= f.select :likes, VotePost.votes.keys %>
+  <div class="field">
+    <%= form.label :likes %>
+    <%= form.number_field :likes %>
   </div>
 
-  <div class="dislike_field">
-    <%= f.label :dislike %><br>
-    <%= f.select :dislike, VotePost.votes.keys %>
+  <div class="field">
+    <%= form.label :dislike %>
+    <%= form.number_field :dislike %>
   </div>
+
+
 
   <div class="actions">
     <%= form.submit %>

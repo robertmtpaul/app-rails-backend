@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+  resources :post_photos_users
   root to: "pages#welcome"
 
   #Session routes:
