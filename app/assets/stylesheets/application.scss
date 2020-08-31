@@ -14,7 +14,24 @@
  *= require_self
  */
 
+ body {
+   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(212,7,7,1) 56%, rgba(252,176,69,1) 100%);
+   color: white !important;
+}
+
+a {
+   color: white !important;
+}
+
+nav a {
+   color: white !important;
+}
+
  nav a:hover {
     background-color: white;
     text-decoration: none;
  }
+
+nav li {
+   list-style-type: none;
+}
