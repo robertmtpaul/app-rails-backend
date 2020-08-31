@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2020_08_31_073852) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "post_photos", force: :cascade do |t|
+    t.text "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "user_post"
     t.integer "user_id"
@@ -45,14 +51,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_073852) do
     t.text "password_digest"
     t.text "profile_pic"
     t.boolean "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vote_posts", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.integer "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
