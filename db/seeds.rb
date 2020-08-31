@@ -57,7 +57,7 @@ u5.posts << p5
 
 puts "created #{ Post.count } Posts."
 
-print "Creating post_photos... "
+print "Creating PostPhotos... "
 PostPhoto.destroy_all
 
 ph1 = PostPhoto.create(photo:"https://www.fillmurray.com/200/300")
@@ -67,18 +67,18 @@ ph4 = PostPhoto.create(photo:"https://www.fillmurray.com/205/300")
 ph5 = PostPhoto.create(photo:"https://www.fillmurray.com/204/300")
 
 
-puts "created #{ PostPhoto.count } post_photos."
+puts "created #{ PostPhoto.count } PostPhotos."
 
-u1.post_photos << ph1
-u2.post_photos << ph2
-u3.post_photos << ph3
-u4.post_photos << ph4
-u5.post_photos << ph5
+# u1.postphotos << ph1
+# u2.postphotos << ph2
+# u3.postphotos << ph3
+# u4.postphotos << ph4
+# u5.postphotos << ph5
 
-puts "Testing associations:"
-print "Follows by #{ User.first.name }, By: "
-puts User.first.follows.pluck(:follower_id,:followed_id).join(', ')
-
-puts "Testing associations:"
-print "Follows by #{ User.last.name }, By: "
-puts User.last.follows.pluck(:follower_id,:followed_id).join(', ')
+# puts "Testing associations:"
+# print "Follows by #{ User.first.name }, By: "
+# puts User.first.follows.pluck(:follower_id,:followed_id).join(', ')
+#
+# puts "Testing associations:"
+# print "Follows by #{ User.last.name }, By: "
+# puts User.last.follows.pluck(:follower_id,:followed_id).join(', ')
