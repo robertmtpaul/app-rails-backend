@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_022927) do
+ActiveRecord::Schema.define(version: 2020_08_31_073852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_022927) do
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "post_photos", force: :cascade do |t|
-    t.text "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,12 +31,28 @@ ActiveRecord::Schema.define(version: 2020_08_31_022927) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.integer "vote_post"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.text "email"
     t.text "password_digest"
     t.text "profile_pic"
     t.boolean "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vote_posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.integer "vote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
