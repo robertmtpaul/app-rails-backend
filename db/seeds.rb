@@ -75,10 +75,10 @@ u3.post_photos << ph3
 u4.post_photos << ph4
 u5.post_photos << ph5
 
-# puts "Testing associations:"
-# print "Follows by #{ User.first.name }, By: "
-# puts User.first.follows.pluck(:follower_id,:followed_id).join(', ')
-#
-# puts "Testing associations:"
-# print "Follows by #{ User.last.name }, By: "
-# puts User.last.follows.pluck(:follower_id,:followed_id).join(', ')
+puts "Testing associations:"
+print "Follows by #{ User.first.name }, By: "
+puts User.first.follows.pluck(:user_id).join(', ')
+
+puts "Testing associations:"
+print "Follows by #{ User.last.name }, By: "
+puts User.last.follows.pluck(:user_id).join(', ')
