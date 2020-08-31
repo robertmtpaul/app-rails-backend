@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @post_photo.photo %>
+</p>
+
+<%= link_to 'Edit', edit_post_photo_path(@post_photo) %> |
+<%= link_to 'Back', post_photos_path %>

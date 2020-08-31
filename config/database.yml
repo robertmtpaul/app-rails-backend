@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: app-rails-backend_development
+  database: sm-db_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: app-rails-backend
+  #username: sm-db
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: app-rails-backend_test
+  database: sm-db_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: app-rails-backend_production
-  username: app-rails-backend
-  password: <%= ENV['APP-RAILS-BACKEND_DATABASE_PASSWORD'] %>
+  database: sm-db_production
+  username: sm-db
+  password: <%= ENV['SM-DB_DATABASE_PASSWORD'] %>
