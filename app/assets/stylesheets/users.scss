@@ -2,13 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    margin: 0 auto;
+}
+
 form {
-    display: flex !important;
+    display: grid;
     flex-direction: column;
+    width: 56vw;
+}
+
+.field {
+    display: grid;
+}
+
+form label {
+    display: flex;
 }
 
 input {
     padding: 10px;
-    justify-self: self-end;
-    border-radius: 90;
+    // width: 30vw;
 }
