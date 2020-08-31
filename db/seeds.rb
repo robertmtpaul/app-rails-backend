@@ -77,8 +77,24 @@ u5.post_photos << ph5
 
 puts "Testing associations:"
 print "Follows by #{ User.first.name }, By: "
-puts User.first.follows.pluck(:user_id).join(', ')
+puts User.first.followers
 
 puts "Testing associations:"
 print "Follows by #{ User.last.name }, By: "
-puts User.last.follows.pluck(:user_id).join(', ')
+puts User.last.followers
+
+puts "Testing associations:"
+print "Posts by #{ User.first.name }, By: "
+puts User.first.posts
+
+puts "Testing associations:"
+print "Posts by #{ User.last.name }, By: "
+puts User.last.posts
+
+puts "Testing associations:"
+print "Photos by #{ User.first.name }, By: "
+puts User.first.post_photos
+
+puts "Testing associations:"
+print "Photos by #{ User.last.name }, By: "
+puts User.last.post_photos
