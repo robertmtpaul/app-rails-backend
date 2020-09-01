@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
   before_action :fetch_user
 
-  
+
   before_action :is_admin?, only: [:index, :new, :show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    render json:User.all
   end
 
   # GET /users/1
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    render json:User.new
   end
 
   # GET /users/1/edit

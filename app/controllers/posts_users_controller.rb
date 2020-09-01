@@ -5,6 +5,7 @@ class PostsUsersController < ApplicationController
   # GET /posts_users.json
   def index
     @posts_users = PostsUser.all
+    render json:PostsUser.all
   end
 
   # GET /posts_users/1
@@ -15,6 +16,7 @@ class PostsUsersController < ApplicationController
   # GET /posts_users/new
   def new
     @posts_user = PostsUser.new
+    render json:PostsUser.all
   end
 
   # GET /posts_users/1/edit
