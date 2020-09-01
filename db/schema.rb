@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_123941) do
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,10 +33,9 @@ ActiveRecord::Schema.define(version: 2020_08_31_123941) do
 
   create_table "post_photos", force: :cascade do |t|
     t.text "photo"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
+
 
   create_table "post_photos_users", force: :cascade do |t|
     t.integer "user_id"

@@ -15,10 +15,15 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+  
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
 
   <div class="field">
-    <%= form.label :password_digest %>
-    <%= form.text_area :password_digest %>
+    <%= form.label 'Password' %>
+    <%= form.password_field :password_digest %>
   </div>
 
   <div class="field">
