@@ -7,7 +7,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @post.user_photo %>
+  <%# <%= @post.user_photo %> %>
 </p>
 
 <p>
@@ -26,7 +26,11 @@
 <% else %>
 <%= button_to 'Disike', post_dislikes_path(@post), method: :post%>
 <% end %>
-
+<br>
+<div>
+  <p><strong><%= @post.comments.count %></strong> Comments</p>
+  <%= render @post.comments %>
+</div>
 
 
 <p><%= @post.dislikes.count %> <%= (@post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
