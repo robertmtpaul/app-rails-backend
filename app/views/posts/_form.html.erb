@@ -17,19 +17,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.label :user %>
+    <%= form.select :user_id, options_from_collection_for_select(User.all, "id","name")%>
   </div>
 
-  <div class="field">
-    <%= form.label :likes %>
-    <%= form.number_field :likes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dislike %>
-    <%= form.number_field :dislike %>
-  </div>
 
 
 
