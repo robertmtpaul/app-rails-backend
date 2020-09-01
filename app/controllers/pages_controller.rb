@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
-
-  before_action :check_if_logged_in, only: [:welcome]
-
+  # TODO : re-enable check once redirecting non-logged in users... 
+  # before_action :check_if_logged_in, only: [:welcome]
+  # before_action :check_if_admin, only.... 
   def welcome
 
 
