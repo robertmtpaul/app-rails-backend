@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :follows
   resources :posts do
     resources :likes
+    resources :dislikes
   end
   #Users CRUD:
   resources :users

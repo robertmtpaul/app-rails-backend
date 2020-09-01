@@ -16,8 +16,21 @@
 <% pre_like = @post.likes.find { |like| like.user_id == @current_user.id} %>
 <% if pre_like %>
 <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-<% else %>
+<% elsif %>
 <%= button_to 'Like', post_likes_path(@post), method: :post %>
+<% else %>
+<%= button_to 'Disike', post_dislikes_path(@post), method: :post%>
+<% end %>
+
+
+
+<p><%= @post.dislikes.count %> <%= (@post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
+
+<% pre_dislike = @post.dislikes.find { |dislike| dislike.user_id == @current_user.id} %>
+<% if pre_dislike %>
+<%= button_to 'Undislike', post_dislike_path(@post, pre_dislike), method: :delete %>
+<% else %>
+<%= button_to 'Disike', post_dislikes_path(@post), method: :post %>
 <% end %>
 
 

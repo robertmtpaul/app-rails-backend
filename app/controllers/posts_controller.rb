@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    render json:Post.all
   end
 
   # GET /posts/1
@@ -16,7 +15,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    render json:Post.new
   end
 
   # GET /posts/1/edit
