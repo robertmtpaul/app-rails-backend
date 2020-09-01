@@ -40,11 +40,11 @@ puts "created #{ Follow.count } Follows."
 print "Creating Posts... "
 Post.destroy_all
 
-p1 = Post.create(user_post:"hello world 1")
-p2 = Post.create(user_post:"hello world 2")
-p3 = Post.create(user_post:"hello world 3")
-p4 = Post.create(user_post:"hello world 4")
-p5 = Post.create(user_post:"hello world 5")
+p1 = Post.create(user_post:"hello world 1",user_photo:"https://www.fillmurray.com/200/300")
+p2 = Post.create(user_post:"hello world 2",user_photo:"https://www.fillmurray.com/201/300")
+p3 = Post.create(user_post:"hello world 3",user_photo:"https://www.fillmurray.com/202/300")
+p4 = Post.create(user_post:"hello world 4",user_photo:"https://www.fillmurray.com/205/300")
+p5 = Post.create(user_post:"hello world 5",user_photo:"https://www.fillmurray.com/204/300")
 
 u1.posts << p1
 u2.posts << p2

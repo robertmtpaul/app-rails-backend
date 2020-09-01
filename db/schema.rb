@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_044503) do
 
   create_table "posts", force: :cascade do |t|
     t.text "user_post"
+    t.text "user_photo"
     t.integer "user_id"
     t.integer "likes"
     t.integer "dislike"
