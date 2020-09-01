@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :post_photos
   resources :follows
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
   #Users CRUD:
   resources :users
   resources :posts_users
