@@ -26,11 +26,13 @@
 
       <% elsif @current_user.present? && @current_user.admin === true %>
 
-      <% else %>
       <li>
         <i class="fas fa-user-plus"></i>
+        <%= link_to 'Login', login_path %>
         <%= link_to 'Create user', new_user_path %>
       </li>
+      <% else %>
+        <%= link_to 'Login', login_path %>
 
       
       <% end %>

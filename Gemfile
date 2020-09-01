@@ -60,7 +60,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 gem 'pry-byebug'
-gem 'rack-cors'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'bulma-clean-theme', '~> 0.9'
