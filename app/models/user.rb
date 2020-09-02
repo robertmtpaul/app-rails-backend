@@ -1,9 +1,5 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
 
-=======
-  has_many :comments
->>>>>>> 4d63ce4c09d855a17ed1090987421f007a1ddde7
   has_many :posts
   has_many :post_photos
   has_many :follows

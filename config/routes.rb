@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-
-
-  get 'comments/create'
-  get 'comments/destroy'
-
-=======
->>>>>>> 4d63ce4c09d855a17ed1090987421f007a1ddde7
   resources :post_photos_users
   root to: "pages#welcome"
 
@@ -18,6 +10,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+  
   resources :post_photos
 
   resources :follows
