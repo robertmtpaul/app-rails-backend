@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_224613) do
+ActiveRecord::Schema.define(version: 2020_09_02_060012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_09_01_224613) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "target_id"
+    t.integer "target_type"
     t.index ["post_id"], name: "index_dislikes_on_post_id"
     t.index ["user_id"], name: "index_dislikes_on_user_id"
   end
@@ -45,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_09_01_224613) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "target_id"
+    t.integer "target_type"
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -66,12 +70,12 @@ ActiveRecord::Schema.define(version: 2020_09_01_224613) do
 
   create_table "posts", force: :cascade do |t|
     t.text "user_post"
+    t.text "user_photo"
     t.integer "user_id"
     t.integer "likes"
     t.integer "dislike"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "user_photo"
   end
 
   create_table "posts_users", force: :cascade do |t|

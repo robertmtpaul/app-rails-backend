@@ -15,15 +15,21 @@
   <%= @post.user.name %>
 </p>
 
-
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
-<% pre_like = @post.likes.find { |like| like.user_id == @current_user.id} %>
-<% if pre_like %>
-<%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+<% if @post.already_liked_by?(@current_user) %>
+<%= button_to 'Unlike', likes_path, method: :delete, params: {target_type:'post', target_id:@post.id} %>
 <% else %>
-<%= button_to 'Like', post_likes_path(@post), method: :post %>
+<%= button_to 'Like', likes_path, method: :post, params: {target_type:'post', target_id:@post.id} %>
 <% end %>
+
+<p><%= @post.dislikes.count %> <%= (@post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
+<% if @post.already_disliked_by?(@current_user) %>
+<%= button_to 'Undislike', dislikes_path, method: :delete, params: {target_type:'post', target_id:@post.id} %>
+<% else %>
+<%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post', target_id:@post.id} %>
+<% end %>
+
 <br>
 <div>
   <p><strong><%= @post.comments.count %></strong> Comments</p>
@@ -31,18 +37,9 @@
   <div class="comment-form">
     <hr />
     <h3 class="subtitle is-3">Leave a reply<h3>
-
+  </div>  
 </div>
 
-
-<p><%= @post.dislikes.count %> <%= (@post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
-
-<% pre_dislike = @post.dislikes.find { |dislike| dislike.user_id == @current_user.id} %>
-<% if pre_dislike %>
-<%= button_to 'Undislike', post_dislike_path(@post, pre_dislike), method: :delete %>
-<% else %>
-<%= button_to 'Disike', post_dislikes_path(@post), method: :post %>
-<% end %>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

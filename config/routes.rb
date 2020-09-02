@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   get 'comments/create'
   get 'comments/destroy'
+
   resources :post_photos_users
-  root to: "pages#home"
+  root to: "pages#welcome"
 
   #Session routes:
   get '/login' => 'session#new' # login form
@@ -13,11 +14,19 @@ Rails.application.routes.draw do
   delete '/login' =>'session#destroy' # logout, i.e. delete session for this users.
 
   resources :post_photos
+
   resources :follows
-  resources :posts do
-    resources :likes
-    resources :dislikes
-  end
+
+  resources :posts
+
+  #need custom destroy route because we arent relying on the like id.
+  delete '/likes' => 'likes#destroy'
+  resources :likes, except: [:destroy]
+
+  delete '/dislikes' => 'dislikes#destroy'
+  resources :dislikes, except: [:destroy]
+
+
   #Users CRUD:
   resources :users
   resources :posts_users

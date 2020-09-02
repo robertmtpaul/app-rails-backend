@@ -5,5 +5,24 @@
   <%= image_tag @post_photo.photo %>
 </p>
 
+<p><%= @post_photo.likes.count %> <%= (@post_photo.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+<% if @post_photo.already_liked_by?(@current_user) %>
+<%= button_to 'Unlike', likes_path, method: :delete, params: {target_type:'post_photo', target_id:@post_photo.id} %>
+<% else %>
+<%= button_to 'Like', likes_path, method: :post, params: {target_type:'post_photo', target_id:@post_photo.id} %>
+<% end %>
+
+<p><%= @post_photo.dislikes.count %> <%= (@post_photo.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
+
+<% if @post_photo.already_disliked_by?(@current_user) %>
+<%= button_to 'Undislike', dislikes_path, method: :delete, params: {target_type:'post_photo', target_id:@post_photo.id} %>
+<% else %>
+<%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post_photo', target_id:@post_photo.id} %>
+<% end %>
+
+
+
+
 <%= link_to 'Edit', edit_post_photo_path(@post_photo) %> |
 <%= link_to 'Back', post_photos_path %>

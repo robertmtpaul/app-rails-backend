@@ -57,7 +57,7 @@ puts "created #{ Post.count } Posts."
 print "Creating Comments..."
 Comment.destroy_all
 
-Comment.create(name: "Random comment", comment: "Blah blah")
+c1 = Comment.create(name: "Random comment", comment: "Blah blah")
 
 puts "Created #{ Comment.count } comments."
 
@@ -102,5 +102,3 @@ puts User.first.post_photos
 puts "Testing associations:"
 print "Photos by #{ User.last.name }, By: "
 puts User.last.post_photos
-
-
