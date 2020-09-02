@@ -1,7 +1,12 @@
 class DislikesController < ApplicationController
   # before_action :find_dislike, only: [:destroy]
   # before_action :find_post
-  before_action :check_if_admin
+  # before_action :check_if_admin
+
+  def index
+    @dislikes = Dislike.all
+    render json:Dislike.all
+  end
 
   def create
     if already_disliked?
@@ -11,6 +16,7 @@ class DislikesController < ApplicationController
       #If there is a leftover like, delete it to avoid having both like/dislikes for the same user.
       Like.where(user:@current_user, target_id:params[:target_id], target_type:params[:target_type]).destroy_all
     end
+    render json:Dislike.all
     redirect_to request.referer
   end
 

@@ -6,11 +6,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    render json:Post.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
-  def show 
+  def show
     @post = Post.find(params[:id])
   end
 

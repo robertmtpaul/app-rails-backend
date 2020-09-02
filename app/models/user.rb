@@ -17,4 +17,5 @@ class User < ApplicationRecord
   has_many :following, through: 'following_relationships', source: 'followed'
   has_many :followers, through: 'followed_relationships', source: 'follower'
 
-end
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  end

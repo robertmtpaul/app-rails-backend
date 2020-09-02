@@ -6,10 +6,7 @@ class PostPhotosController < ApplicationController
   # GET /post_photos.json
   def index
     @post_photos = PostPhoto.all
-    respond_to do |format|
-      format.html
-      format.json {render json: @post_photos}
-    end
+    render json:Post.all
     # render json:PostPhoto.all
   end
 
