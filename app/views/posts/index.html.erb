@@ -2,10 +2,10 @@
 
 <h1>News Feed</h1>
 
-<table>
+<table class="newsfeed">
   <thead>
     <tr>
-      <th>Name</th>
+      <th class="name">Name</th>
       <th>Posts</th>
       <th>Photos</th>
       <th>id</th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= post.user.name %></td>
         <td><%= post.user_post %></td>
-        <td><%= post.user_photo %></td>
+        <td><%= image_tag post.user_photo %></td>
         <td><%= post.user_id %></td>
         <td><%# post.likes %></td>
         <td><%# post.dislike %></td>

@@ -15,8 +15,8 @@
  */
 
  body {
-   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(212,7,7,1) 56%, rgba(252,176,69,1) 100%);
-   color: white !important;
+   background: linear-gradient(90deg, #55b9f3 0%, #489dcf 56%, #62d5ff 100%);
+   color: black;
 }
 
 a {
@@ -47,4 +47,24 @@ form.button_to {
 
 nav {
    display: flex;
+}
+
+img {
+  border-radius: 50px;
+  background: #55b9f3;
+  box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
+  margin-top: 50px;
+}
+
+table.newsfeed {
+  margin: 0 auto;
+}
+
+.newsfeed th.name {
+  width: 20vw;
+}
+
+td {
+  margin-right: 50px;
+  margin-left: 50px;
 }
