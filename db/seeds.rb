@@ -57,15 +57,11 @@ puts "created #{ Post.count } Posts."
 print "Creating Comments..."
 Comment.destroy_all
 
-<<<<<<< HEAD
-c1 = Comment.create(name: "Random comment", comment: "Blah blah")
-=======
 c1 = Comment.create(name: "Random comment", content: "Blah blah")
 c2 = Comment.create(name: "Another comment", content: "Gesellschaftswissenschaftliche Schwerpunkt")
 c1 = Comment.create(name: "Ungefaelliges Kommentar", content: "Ganz furchtbar")
 
 p1.comments << c1
->>>>>>> 4d63ce4c09d855a17ed1090987421f007a1ddde7
 
 puts "Created #{ Comment.count } comments."
 
