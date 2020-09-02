@@ -7,7 +7,11 @@
 
 <p>
   <strong>Photo:</strong>
+<<<<<<< HEAD
   <%= image_tag @post.user_photo %>
+=======
+  <%# <%= @post.user_photo %> %>
+>>>>>>> 25eb1b7f593479c533b1fce7ee026c607911ba19
 </p>
 
 <p>
@@ -26,7 +30,11 @@
 <% else %>
 <%= button_to 'Disike', post_dislikes_path(@post), method: :post%>
 <% end %>
-
+<br>
+<div>
+  <p><strong><%= @post.comments.count %></strong> Comments</p>
+  <%= render @post.comments %>
+</div>
 
 
 <p><%= @post.dislikes.count %> <%= (@post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'comments/create'
+  get 'comments/destroy'
   resources :post_photos_users
   root to: "pages#home"
 

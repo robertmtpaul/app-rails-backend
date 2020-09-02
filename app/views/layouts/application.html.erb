@@ -18,37 +18,39 @@
   <body>
    <h1><%=  link_to 'Touch', root_path %> 
    <i class="fas fa-hand-peace"></i> </h1>
-    <nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <% if @current_user.present? %>
-          Hello, <%= @current_user.name %> |
-      <%= link_to 'Logout', login_path, method: 'delete' %>
-      <ul>
-      <li class="nav-link">
-        <i class="fas fa-user-plus"></i>
-        <%= link_to 'Create user', new_user_path %>
-      </li>
-      <li class="nav-link">
-       <%= link_to 'All Users', users_path %>
-      </li>
-      <li class="nav-link">
-       <%= link_to 'All Posts', posts_path %>
-      </li>
-      <li class="nav-link">
-        <%= link_to 'All photo posts', post_photos_path %>
-      </li>
-      <li class="nav-link">
-        <%= link_to 'Photo posts', new_user_path %>
-      </li>
-      <li class="nav-link">
-        <%= link_to 'Photo posts', new_user_path %>
-      </li>
-      <% elsif @current_user.present? && @current_user.admin === true %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul>
+          <li>
+          <% if @current_user.present? %>
+              Hello, <%= @current_user.name %> |
+          <%= link_to 'Logout', login_path, method: 'delete' %>
+          </li>
+          <li class="nav-link">
+            <i class="fas fa-user-plus"></i>
+            <%= link_to 'Create user', new_user_path %>
+          </li>
+          <li class="nav-link">
+          <%= link_to 'All Users', users_path %>
+          </li>
+          <li class="nav-link">
+          <%= link_to 'All Posts', posts_path %>
+          </li>
+          <li class="nav-link">
+            <%= link_to 'All photo posts', post_photos_path %>
+          </li>
+          <% elsif @current_user.present? && @current_user.admin === true %>
 
-      <% else %>
-      <li><%= link_to 'Login', login_path %></li>
-      
-      <% end %>
+          <% else %>
+          <%= link_to 'Login', login_path %>
+
+        </ul>
+        <% end %>
+        </div>
       </nav>
       <hr>
     <%= yield %>

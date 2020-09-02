@@ -52,8 +52,14 @@ u3.posts << p3
 u4.posts << p4
 u5.posts << p5
 
-
 puts "created #{ Post.count } Posts."
+
+print "Creating Comments..."
+Comment.destroy_all
+
+Comment.create(name: "Random comment", comment: "Blah blah")
+
+puts "Created #{ Comment.count } comments."
 
 print "Creating PostPhotos... "
 PostPhoto.destroy_all
@@ -96,3 +102,5 @@ puts User.first.post_photos
 puts "Testing associations:"
 print "Photos by #{ User.last.name }, By: "
 puts User.last.post_photos
+
+

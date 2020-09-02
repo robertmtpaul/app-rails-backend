@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  has_many :comments
   has_many :likes, dependent: :destroy
   has_many :dislikes, dependent: :destroy
   belongs_to :user, optional: true
