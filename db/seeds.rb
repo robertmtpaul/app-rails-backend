@@ -57,7 +57,9 @@ puts "created #{ Post.count } Posts."
 print "Creating Comments..."
 Comment.destroy_all
 
-Comment.create(name: "Random comment", comment: "Blah blah")
+c1 = Comment.create(name: "Random comment", comment: "Blah blah")
+
+p1.comments << c1
 
 puts "Created #{ Comment.count } comments."
 
