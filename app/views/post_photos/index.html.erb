@@ -13,7 +13,7 @@
   <tbody>
     <% @post_photos.each do |post_photo| %>
       <tr>
-        <td><%= post_photo.photo %></td>
+        <td><%= image_tag post_photo.photo %></td>
         <td><%= link_to 'Show', post_photo %></td>
         <td><%= link_to 'Edit', edit_post_photo_path(post_photo) %></td>
         <td><%= link_to 'Destroy', post_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
