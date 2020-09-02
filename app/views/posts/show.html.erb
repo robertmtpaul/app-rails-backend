@@ -31,7 +31,7 @@
   <div>
       <div class="col-7">
       <hr />
-      <p class="subtitle is-3">Leave a reply<p>
+      <p class="subtitle is-3">Add a comment<p>
       <%= render 'comments/form' %>
     </div>
 </div>
@@ -43,7 +43,7 @@
 <% if pre_dislike %>
 <%= button_to 'Undislike', post_dislike_path(@post, pre_dislike), method: :delete %>
 <% else %>
-<%= button_to 'Disike', post_dislikes_path(@post), method: :post %>
+<%= button_to 'Dislike', post_dislikes_path(@post), method: :post %>
 <% end %>
 
 
