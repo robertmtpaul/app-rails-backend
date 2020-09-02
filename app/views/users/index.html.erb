@@ -17,7 +17,8 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= user.profile_pic %></td>
+        <td><%= user.password_digest %></td>
+        <td><img src="<%= user.profile_pic %>" alt="profile_pic"></td>
         <td><%= user.admin %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

@@ -2,8 +2,9 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.select :name, options_from_collection_for_select(User.all,"name","name")%>
   </div>
+
 
   <div class="field">
     <%= form.label :content %>

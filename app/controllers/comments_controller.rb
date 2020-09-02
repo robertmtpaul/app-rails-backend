@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+
+  def index
+    @comments = Comment.all
+    render json:Comment.all
+  end
+
   def create
     # RAILS:
     #find post by post_id

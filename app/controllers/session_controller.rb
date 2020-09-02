@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   def new
+\    render json:Session
   end # new
 
   def create
@@ -10,7 +11,7 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate( params[:password] )
       # credentials were correct and so it creates a session
       if user.admin?
-        session[:user_id] = user.id      
+        session[:user_id] = user.id
       else
         # Should redirect to react login for frontend users
         flash[:message] = "It does not appear user is an admin"

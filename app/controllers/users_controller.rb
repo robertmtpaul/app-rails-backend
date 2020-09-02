@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    # render json:User.all
+    render json:User.all
   end
 
   # GET /users/1
@@ -69,7 +69,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    @user = User.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
