@@ -7,7 +7,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%# <%= @post.user_photo %> %>
+  <%= @post.user_photo %>
 </p>
 
 <p>
@@ -30,6 +30,13 @@
 <div>
   <p><strong><%= @post.comments.count %></strong> Comments</p>
   <%= render @post.comments %>
+  <div class="comment-form">
+    <hr />
+    <h3 class="subtitle is-3">Leave a reply<h3>
+    
+
+
+
 </div>
 
 
