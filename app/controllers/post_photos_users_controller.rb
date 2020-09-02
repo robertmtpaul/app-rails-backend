@@ -1,6 +1,6 @@
 class PostPhotosUsersController < ApplicationController
   before_action :set_post_photos_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_admin, only: [:index, :new, :show, :edit, :update, :destroy]
+  before_action :check_if_admin
 
   # GET /post_photos_users
   # GET /post_photos_users.json
