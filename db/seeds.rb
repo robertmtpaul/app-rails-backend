@@ -9,7 +9,7 @@
 print "Creating Users... "
 User.destroy_all
 
-u1 = User.create(name:"Nemo",email:"organixaustralia@live.com", password:"chicken",admin:true)
+u1 = User.create(name:"Nemo", email:"organixaustralia@live.com", password:"chicken", admin:true)
 u2 = User.create(name:"Paul",email:"paul@ge.com.au", password:"chicken",admin:true)
 u3 = User.create(name:"Karthik",email:"karthik@ge.com.au", password:"chicken",admin:true)
 u4 = User.create(name:"Luke",email:"luke@ge.com.au", password:"chicken",admin:false)
@@ -57,7 +57,15 @@ puts "created #{ Post.count } Posts."
 print "Creating Comments..."
 Comment.destroy_all
 
+<<<<<<< HEAD
 c1 = Comment.create(name: "Random comment", comment: "Blah blah")
+=======
+c1 = Comment.create(name: "Random comment", content: "Blah blah")
+c2 = Comment.create(name: "Another comment", content: "Gesellschaftswissenschaftliche Schwerpunkt")
+c1 = Comment.create(name: "Ungefaelliges Kommentar", content: "Ganz furchtbar")
+
+p1.comments << c1
+>>>>>>> 4d63ce4c09d855a17ed1090987421f007a1ddde7
 
 puts "Created #{ Comment.count } comments."
 

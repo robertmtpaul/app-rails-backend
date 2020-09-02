@@ -34,6 +34,7 @@
 <div>
   <p><strong><%= @post.comments.count %></strong> Comments</p>
   <%= render @post.comments %>
+<<<<<<< HEAD
   <div class="comment-form">
     <hr />
     <h3 class="subtitle is-3">Leave a reply<h3>
@@ -41,6 +42,26 @@
 </div>
 
 
+=======
+  <div>
+      <div class="col-7">
+      <hr />
+      <p class="subtitle is-3">Add a comment<p>
+      <%= render 'comments/form' %>
+    </div>
+</div>
+
+
+<p><%= @post.dislikes.count %> <%= (@post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
+
+<% pre_dislike = @post.dislikes.find { |dislike| dislike.user_id == @current_user.id} %>
+<% if pre_dislike %>
+<%= button_to 'Undislike', post_dislike_path(@post, pre_dislike), method: :delete %>
+<% else %>
+<%= button_to 'Dislike', post_dislikes_path(@post), method: :post %>
+<% end %>
+
+>>>>>>> 4d63ce4c09d855a17ed1090987421f007a1ddde7
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

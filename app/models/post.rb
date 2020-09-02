@@ -1,9 +1,6 @@
 class Post < ApplicationRecord
-  # has_many :likes, dependent: :destroy
-  #
-  # has_many :dislikes, dependent: :destroy
-  belongs_to :user, optional: true
-  belongs_to :post, optional: true
+  belongs_to :user
+  has_many :post_photos
   has_many :comments
 
   # has_and_belongs_to_many :liked_by_users, class_name:'User'

@@ -1,0 +1,9 @@
+<div class="container">
+    <article class="media">
+        <div class="media-body">
+                <p>
+                    <strong><%= comment.name %>: </strong>
+                    <%= comment.content %>
+            </div>
+        </div>
+    <%= link_to 'Delete', [comment.post, comment], method: :delete, class:"btn btn-danger", data: { confirm: "Are you sure?" } %>
