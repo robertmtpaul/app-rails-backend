@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  # Check if logged in before running actions on any controller
     before_action :fetch_user
-    # Check if logged in before running actions on any controller
 
     def fetch_user
     #CHeck whether user_id in session is ID
