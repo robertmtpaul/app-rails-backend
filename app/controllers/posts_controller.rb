@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_admin
+  before_action :check_if_logged_in
 
   # GET /posts
   # GET /posts.json

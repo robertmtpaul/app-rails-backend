@@ -1,6 +1,6 @@
 class PostsUsersController < ApplicationController
   before_action :set_posts_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_admin
+  before_action :fetch_user
 
 
   # GET /posts_users
