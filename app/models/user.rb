@@ -1,11 +1,11 @@
 class User < ApplicationRecord
+  has_secure_password
 
   has_many :posts
   has_many :post_photos
   has_many :follows
   # has_many :likes, dependent: :destroy
   # has_many :dislikes, dependent: :destroy
-  has_secure_password
   validates :name, length: { minimum: 2 }
   validates :email, presence: true, uniqueness: true
 
