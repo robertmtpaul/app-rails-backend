@@ -59,10 +59,11 @@ Comment.destroy_all
 
 c1 = Comment.create(name: "Random comment", content: "Blah blah")
 c2 = Comment.create(name: "Another comment", content: "Gesellschaftswissenschaftliche Schwerpunkt")
-c1 = Comment.create(name: "Ungefaelliges Kommentar", content: "Ganz furchtbar")
+c3 = Comment.create(name: "Ungefaelliges Kommentar", content: "Ganz furchtbar")
 
 p1.comments << c1
-
+p2.comments << c2
+p3.comments << c3
 puts "Created #{ Comment.count } comments."
 
 print "Creating PostPhotos... "

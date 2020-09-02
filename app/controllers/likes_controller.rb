@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :check_if_admin, only: [:index, :new, :show, :edit, :update, :destroy]
 
   # before_action :find_like, only: [:destroy]
   # before_action :find_post

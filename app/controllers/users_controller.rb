@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :fetch_user
 
 
-  before_action :check_if_admin, only: [:index, :new, :show, :edit, :update, :destroy]
+  before_action :check_if_admin
 
   # GET /users
   # GET /users.json
@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+
   end
 
   # GET /users/new

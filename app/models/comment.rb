@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
     belongs_to :post, optional:true
-    belongs_to :user
+    belongs_to :users, optional: true
     belongs_to :post_photo, optional:true
     # has_many :likes
     # has_many :dislikes

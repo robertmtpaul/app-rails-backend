@@ -1,5 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :check_if_admin
+
+  def index
   
+    @comments = Comment.all
+    render json:Comment.all
+  end
+
+
   def create
 
     # RAILS:
