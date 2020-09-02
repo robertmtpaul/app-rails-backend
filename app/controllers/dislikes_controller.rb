@@ -1,6 +1,7 @@
 class DislikesController < ApplicationController
   # before_action :find_dislike, only: [:destroy]
   # before_action :find_post
+  before_action :check_if_admin
 
   def create
     if already_disliked?

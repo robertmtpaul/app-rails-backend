@@ -1,5 +1,6 @@
 class FollowsController < ApplicationController
   before_action :set_follow, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_admin
 
   # GET /follows
   # GET /follows.json

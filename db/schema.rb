@@ -71,12 +71,12 @@ ActiveRecord::Schema.define(version: 2020_09_02_062328) do
 
   create_table "posts", force: :cascade do |t|
     t.text "user_post"
-    t.text "user_photo"
     t.integer "user_id"
     t.integer "likes"
     t.integer "dislike"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "user_photo"
   end
 
   create_table "posts_users", force: :cascade do |t|
