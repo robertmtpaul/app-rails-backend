@@ -89,4 +89,9 @@ td {
   margin-left: 50px;
 }
 
-
+.users_show_left, .users_show_right {
+  display: inline-block;
+  border: 1px solid red;
+  width: 30vw;
+  height: 100vh;
+}

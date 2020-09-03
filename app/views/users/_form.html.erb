@@ -10,33 +10,40 @@
       </ul>
     </div>
   <% end %>
-    <div class="form-group">
-      <%= form.label :name %>
-      <%= form.text_field :name, :class=>'form-control' %>
-    </div>
 
-    <div class="form-group">
-      <%= form.label :email %>
-      <%= form.text_field :email, :class=>'form-control' %>
-    </div>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
-    <div class="form-group">
-      <%= form.label :profile_pic %>
-      <%= form.text_field :profile_pic, :class=>'form-control' %>
-    </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
 
-    <div class="form-group">
-      <%= form.label :password %>
-      <%= form.password_field :password, :class=>'form-control' %>
-    </div>
+  <div class="field">
+    <%= form.label :profile_pic %>
+    <%= form.text_field :profile_pic %>
+  </div>
 
-    <div class="form-group">
-      <%= form.label :password_confirmation %>
-      <%= form.password_field :password_confirmation, :class=>'form-control' %>
-    </div>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
 
-    <div class="actions">
-      <%= form.submit :class=>'btn btn-secondary' %>
-    </div>
 
+  <div class="field">
+    <% if @current_user.present? && @current_user.admin %>
+    <%= form.label :admin %>
+    <%= form.check_box :admin %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

@@ -10,13 +10,13 @@ class SessionController < ApplicationController
     # Did we find a user with that email?
     if user.present? && user.authenticate( params[:password] )
       # credentials were correct and so it creates a session
-      if user.admin?
+      # if user.admin?
         session[:user_id] = user.id
-      else
-        # Should redirect to react login for frontend users
-        flash[:message] = "It does not appear user is an admin"
-
-      end
+      # else
+      #   # Should redirect to react login for frontend users
+      #   flash[:message] = "It does not appear user is an admin"
+      #
+      # end
 
       redirect_to(root_path)
 
