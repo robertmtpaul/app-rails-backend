@@ -44,28 +44,28 @@ a:hover {
 }
 // -----------------------Feed styles-------------------------//
 
-.feed{
+.feed {
    flex: 0.4;
    min-width: fit-content;
  }
 
 .post-image {
-   border-radius: 50px;
+   border-radius: 10%;
+   align-self: center;
    background: #55b9f3;
    box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
-   width: 20vw; 
+   width: 10vw; 
  }
  
 .post {
     display: flex;
     align-items: flex-start;
     padding-bottom: 10px;
-    border: 1px solid red;
   }
 
 .avatar {
-   width: 15vw;
-   border-radius: 20px;
+   width: 10vw;
+   border-radius: 63%;
 }
 // ----------------------------Navbar styles-------------------------//
 
@@ -82,6 +82,7 @@ nav a {
 nav li {
    list-style-type: none;
    display: inline !important;
+   color: white;
 }
 
 form.button_to {
@@ -102,9 +103,8 @@ nav {
    border-radius: 9%;
    background: #55b9f3;
    box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
+   width: 15vw;
  }
-
-
 
 table.newsfeed {
   margin: 0 auto;
