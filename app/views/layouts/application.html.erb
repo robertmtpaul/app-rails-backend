@@ -26,10 +26,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul>
           <li>
-          <% if @current_user.present? %>
+          <% if @current_user.present?  && @current_user.admin === true %>
               Hello, <%= @current_user.name %> |
           <%= link_to 'Logout', login_path, method: 'delete' %>
-          </li>
           <li class="nav-link">
             <i class="fas fa-user-plus"></i>
             <%= link_to 'Create user', new_user_path %>
@@ -43,8 +42,6 @@
           <li class="nav-link">
             <%= link_to 'All photo posts', post_photos_path %>
           </li>
-          <% elsif @current_user.present? && @current_user.admin === true %>
-
           <% else %>
           <%= link_to 'Login', login_path %>
 
