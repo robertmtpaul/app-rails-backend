@@ -12,27 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, :class=>'form-control'  %>
+    <%= form.text_field :name, :class=>'form-control', :placeholder => 'Name' %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, :class=>'form-control'  %>
+    <%= form.text_field :email, :class=>'form-control', :placeholder => 'Name' %>
   </div>
 
   <div class="field">
     <%= form.label :profile_pic %>
-    <%= form.text_field :profile_pic, :class=>'form-control'  %>
+    <%= form.text_field :profile_pic, :class=>'form-control', :placeholder => 'Profile picture URL' %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password, :class=>'form-control'  %>
+    <%= form.password_field :password, :class=>'form-control', :placeholder => 'Password'   %>
   </div>
   <div class="field">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, :class=>'form-control'  %>
+    <%= form.password_field :password_confirmation, :class=>'form-control' , :placeholder => 'Confirm password'  %>
   </div>
 
 

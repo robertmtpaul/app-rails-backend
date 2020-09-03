@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :post_photos_users
-  root to: "pages#welcome"
+  root to: "posts#index"
 
   #Session routes:
   get '/login' => 'session#new' # login form

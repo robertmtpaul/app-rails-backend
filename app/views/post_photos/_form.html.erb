@@ -1,22 +1,25 @@
-<%= form_with(model: post_photo, local: true) do |form| %>
-  <% if post_photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post_photo.errors.count, "error") %> prohibited this post_photo from being saved:</h2>
+<div class="form-group">
 
-      <ul>
-      <% post_photo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_with(model: post_photo, local: true) do |form| %>
+    <% if post_photo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post_photo.errors.count, "error") %> prohibited this post_photo from being saved:</h2>
+
+        <ul>
+        <% post_photo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :photo %>
+      <%= form.text_field :photo %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit :class=>'btn btn-secondary' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
