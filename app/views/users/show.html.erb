@@ -1,38 +1,45 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<section id="all-links">
-    <% if @user.id == @current_user.id %>
-        <%= button_to "Logout", '/logout', method: :post %>
-    <% elsif @current_user.following.include?(@user) %>
-        <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
-    <% else %>
-        <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
-    <% end%>
-    <%= link_to 'Followers', follow_path(@user) %>
-    <%= link_to 'Following', follow_path(@user) %>
-    <br>
-</section>
+<div class="users_show_left">
+  <p id="notice"><%= notice %></p>
 
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Profile pic:</strong>
-  <img src="<%= @user.profile_pic %>" alt="profile_pic">
-</p>
+  <section id="all-links">
+      <% if @user.id == @current_user.id %>
+          <%= button_to "Logout", '/logout', method: :post %>
+      <% elsif @current_user.following.include?(@user) %>
+          <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
+      <% else %>
+          <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
+      <% end%>
+      <%= link_to 'Followers', follow_path(@user) %>
+      <%= link_to 'Following', follow_path(@user) %>
+      <br>
+  </section>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Profile pic:</strong>
+    <img src="<%= @user.profile_pic %>" alt="profile_pic">
+  </p>
+
+  <p>
+    <strong>Admin:</strong>
+    <%= @user.admin %>
+  </p>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>
+
+<div class="users_show_right">
+  <h2>Followers</h2>
+</div>
