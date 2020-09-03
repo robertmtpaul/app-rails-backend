@@ -18,7 +18,7 @@ class LikesController < ApplicationController
       # Dislike.where(user:@current_user, target_id:params[:target_id], target_type:params[:target_type]).destroy_all
       Dislike.where(user:@current_user, target_id:params[:target_id], target_type:params[:target_type]).destroy_all
     end
-    render json:Like.all
+    # render json:Like.all
     redirect_to request.referer
   end
 

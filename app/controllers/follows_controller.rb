@@ -16,7 +16,7 @@ class FollowsController < ApplicationController
   # GET /follows/new
   def new
     @follow = Follow.new
-    render json:Follow.new
+    # render json:Follow.new
   end
 
   # GET /follows/1/edit

@@ -16,7 +16,7 @@ class DislikesController < ApplicationController
       #If there is a leftover like, delete it to avoid having both like/dislikes for the same user.
       Like.where(user:@current_user, target_id:params[:target_id], target_type:params[:target_type]).destroy_all
     end
-    render json:Dislike.all
+    # render json:Dislike.all
     redirect_to request.referer
   end
 
