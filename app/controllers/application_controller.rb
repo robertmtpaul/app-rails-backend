@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true
   # Check if logged in before running actions on any controller
     before_action :fetch_user
 
