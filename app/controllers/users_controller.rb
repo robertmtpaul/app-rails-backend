@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: user_path(@user))
   end
 
+  def posts
+    @posts = Post.all
+  end
+
   def unfollow
     @user = User.find(params[:id])
     @current_user.followed_users.find_by(followed_id: @user.id).destroy
@@ -26,6 +30,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @posts = Post.find(params[:id])
   end
 
   # GET /users/new
