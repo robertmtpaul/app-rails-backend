@@ -26,31 +26,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul>
           <li>
-          <% if @current_user.present?  && @current_user.admin === true %>
+          <% if @current_user.present? %>
               Hello, <%= @current_user.name %> |
           <%= link_to 'Logout', login_path, method: 'delete' %>
+          </li>
+          <li class="nav-link">
+            <%= link_to 'FEED', posts_path %>
+          </li>
+          <li class="nav-link">
+            <%= link_to 'PHOTOS', post_photos_path %>
+          </li>
+          <li class="nav-link">
+          <%= link_to 'PROFILES', users_path %>
+          </li>
+
+          <%  elsif @current_user.present? && @current_user.admin === true%>
           <li class="nav-link">
             <i class="fas fa-user-plus"></i>
             <%= link_to 'Create user', new_user_path %>
           </li>
-          <li class="nav-link">
-          <%= link_to 'All Users', users_path %>
-          </li>
-          <li class="nav-link">
-          <%= link_to 'All Posts', posts_path %>
-          </li>
-          <li class="nav-link">
-            <%= link_to 'All photo posts', post_photos_path %>
-          </li>
+          
           <% else %>
           <%= link_to 'Login', login_path %>
-
         </ul>
         <% end %>
         </div>
       </nav>
-      <hr>
-    <%= yield %>
+
+      <div class="container">
+        <%= yield %>
+      </div>
 
 
     <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>

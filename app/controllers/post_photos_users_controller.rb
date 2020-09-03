@@ -5,7 +5,7 @@ class PostPhotosUsersController < ApplicationController
   # GET /post_photos_users.json
   def index
     @post_photos_users = PostPhotosUser.all
-    render json:PostPhotosUser.all
+    # render json:PostPhotosUser.all
   end
 
   # GET /post_photos_users/1
