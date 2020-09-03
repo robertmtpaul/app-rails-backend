@@ -6,7 +6,7 @@ class FollowsController < ApplicationController
   # GET /follows.json
   def index
     @follows = Follow.all
-    render json:Follow.all
+    # render json:Follow.all
   end
 
   # GET /follows/1
@@ -17,7 +17,7 @@ class FollowsController < ApplicationController
   # GET /follows/new
   def new
     @follow = Follow.new
-    render json:Follow.new
+    # render json:Follow.new
   end
 
   # GET /follows/1/edit

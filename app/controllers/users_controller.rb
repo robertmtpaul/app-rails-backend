@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    render json:User.all
+    # render json:User.all
   end
 
   # GET /users/1

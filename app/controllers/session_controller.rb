@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   def new
-\    render json:Session
+    # render json:Session
   end # new
 
   def create
