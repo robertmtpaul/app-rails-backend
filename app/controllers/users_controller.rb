@@ -2,7 +2,19 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :fetch_user
 
-  before_action :check_if_admin, except: [:show, :edit, :update, :destroy]
+  # before_action :check_if_admin, except: [:show, :new, :edit, :update, :destroy]
+
+  def follow
+    @user = User.find(params[:id])
+    @current_user.following << @user
+    redirect_back(fallback_location: user_path(@user))
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    @current_user.followed_users.find_by(followed_id: @user.id).destroy
+    redirect_back(fallback_location: user_path(@user))
+  end
 
   # GET /users
   # GET /users.json
