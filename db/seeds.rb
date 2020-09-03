@@ -9,11 +9,11 @@
 print "Creating Users... "
 User.destroy_all
 
-u1 = User.create(name:"Nemo", email:"organixaustralia@live.com", password:"chicken", admin:true)
-u2 = User.create(name:"Paul",email:"paul@ge.com.au", password:"chicken",admin:true)
-u3 = User.create(name:"Karthik",email:"karthik@ge.com.au", password:"chicken",admin:true)
-u4 = User.create(name:"Luke",email:"luke@ge.com.au", password:"chicken",admin:false)
-u5 = User.create(name:"Zara",email:"zara@ge.com.au", password:"chicken",admin:false)
+u1 = User.create(name:"Nemo", email:"organixaustralia@live.com", password:"chicken", admin:true, profile_pic: "http://place-puppy.com/200x204")
+u2 = User.create(name:"Paul",email:"paul@ge.com.au", password:"chicken",admin:true, profile_pic: "http://place-puppy.com/200x205")
+u3 = User.create(name:"Karthik",email:"karthik@ge.com.au", password:"chicken",admin:true, profile_pic: "http://place-puppy.com/200x206")
+u4 = User.create(name:"Luke",email:"luke@ge.com.au", password:"chicken",admin:false, profile_pic: "http://place-puppy.com/200x207")
+u5 = User.create(name:"Zara",email:"zara@ge.com.au", password:"chicken",admin:false, profile_pic: "http://place-puppy.com/200x208")
 
 
 puts "created #{ User.count } Users."

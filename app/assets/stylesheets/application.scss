@@ -13,9 +13,7 @@
 
  @import "bootstrap";
 
-.navbar-brand {
-   width: 20vw;
-}
+//------------------------Base styles ----------------------------//
 
  body {
    background: linear-gradient(90deg, #55b9f3 0%, #489dcf 56%, #62d5ff 100%);
@@ -30,6 +28,9 @@ a:hover {
    text-decoration: none !important;
    background-color: rgba(255, 255, 255, 0);
 }
+
+// -----------------------Navbar styles-------------------------//
+
 
 nav a {
    color: white !important;
@@ -53,11 +54,26 @@ nav {
    display: flex;
 }
 
-img {
+nav .logo {
+   border-radius: 50px;
+   background: #55b9f3;
+   box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
+   margin-top: 50px;
+   width: 20vw;
+   
+ }
+
+.post-image {
   border-radius: 50px;
   background: #55b9f3;
   box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
   margin-top: 50px;
+  width: 20vw;
+  
+}
+
+.avatar {
+   width: 10vw;
 }
 
 table.newsfeed {

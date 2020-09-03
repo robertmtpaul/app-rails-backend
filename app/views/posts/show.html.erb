@@ -8,10 +8,7 @@
   <%= @post.user_post %>
 </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @post.user_photo %>
-</p>
+<%= cl_image_tag @post.user_photo.first.image, class: ‘edit_thumb’, crop: ‘fill’, width: 100, height: 100 %>
 
 <p>
   <strong>User:</strong>

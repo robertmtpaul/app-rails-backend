@@ -28,6 +28,16 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+  #   if params[:file].present?
+  #     response = Cloudinary::Uploader.upload(params[:file])
+  #     Photo.create image: response[‘public_id’], property_id: @property.id
+  #   end
+  #   redirect_to properties_path
+  # else
+  #   #validation error for property..Redisplay Form
+  #   render :new
+  # end
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
