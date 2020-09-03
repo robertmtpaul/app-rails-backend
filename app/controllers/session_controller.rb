@@ -1,11 +1,7 @@
 class SessionController < ApplicationController
-  
+
   def new
-<<<<<<< HEAD
     # render json:Session
-=======
-    # render json:Sessions
->>>>>>> 8e5c1ed38fcd3d5e060d84a39e71e7a7661bb3ac
   end # new
 
   def create
