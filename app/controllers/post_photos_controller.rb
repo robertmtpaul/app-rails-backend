@@ -1,12 +1,18 @@
 class PostPhotosController < ApplicationController
   before_action :set_post_photo, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_admin
 
   # GET /post_photos
   # GET /post_photos.json
   def index
     @post_photos = PostPhoto.all
+<<<<<<< HEAD
     # render json:Post.all
+=======
+    respond_to do |format|
+      format.html
+      format.json {render json: @post_photos}
+    end
+>>>>>>> 8e5c1ed38fcd3d5e060d84a39e71e7a7661bb3ac
     # render json:PostPhoto.all
   end
 

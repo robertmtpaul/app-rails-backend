@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :fetch_user
 
-
-  before_action :check_if_admin
+  before_action :check_if_admin, except: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
