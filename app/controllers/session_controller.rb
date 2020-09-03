@@ -1,5 +1,4 @@
 class SessionController < ApplicationController
-  protect_from_forgery prepend: true
   
   def new
     # render json:Sessions
