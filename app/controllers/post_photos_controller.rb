@@ -5,14 +5,7 @@ class PostPhotosController < ApplicationController
   # GET /post_photos.json
   def index
     @post_photos = PostPhoto.all
-<<<<<<< HEAD
     # render json:Post.all
-=======
-    respond_to do |format|
-      format.html
-      format.json {render json: @post_photos}
-    end
->>>>>>> 8e5c1ed38fcd3d5e060d84a39e71e7a7661bb3ac
     # render json:PostPhoto.all
   end
 
