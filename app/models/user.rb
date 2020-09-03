@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :post_photos
   has_many :follows
-  has_many :comments
+  has_many :comments, :through => :posts
   # has_many :likes, dependent: :destroy
   # has_many :dislikes, dependent: :destroy
   validates :name, length: { minimum: 2, nmaximum: 20 }
