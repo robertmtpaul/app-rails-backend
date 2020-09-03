@@ -1,51 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Post', new_post_path %>
-
-  <div class="container">
-    <% @posts.each do |post| %>
-      <div class="card">
-        <td></td>
-        <td><img src="<%= post.user_photo %>" alt="post" class="post-image"></td>
-        <td><%# post.likes %></td>
-        <td><%# post.dislike %></td>
-        <div><img src="<%= post.user.profile_pic %>" alt="user profile picture" class="post-image"></td>
-      <% if @current_user.present? && @current_user.admin %>
-
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<div class="card mb-3">
-  <% @posts.each do |post| %>
-    <img class="card-img-top" src="<%= post.user_photo %>" alt="<%= post.user_post %>">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text"><%= post.user_post %></p>
-      <img src="<%= post.user.profile_pic %>" alt="user profile picture" class="post-image">
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      <% if @current_user.present? && @current_user.admin %>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    <% end%>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-    <img class="card-img-bottom" src="..." alt="Card image cap">
+<div class="btn btn-dark">
+  <%= link_to 'New Post', new_post_path %>
 </div>
-
+<br>
+<div class="feed">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h5 class="card-title"><%= post.user.name %></h5>
+      <img class="post-image" src="<%= post.user.profile_pic %>" alt="<%= post.user_post %>">
+      <div class="feed_header">
+        <p class="card-text"><%= post.user_post %></p>
+        <img src="<%= post.user_photo %>" alt="<%= post.user_post %>" class="post-image">
+        <p class="card-text"><small class="text-muted">Last updated <%= post.updated_at %></small></p>
+        <% if @current_user.present? && @current_user.admin %>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </div>
+    </div>
+    <% end%>
+  </div>

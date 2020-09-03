@@ -18,13 +18,17 @@
 
  body {
    margin-top: 20px;
-   // background: linear-gradient(90deg, #55b9f3 0%, #489dcf 56%, #62d5ff 100%);
+   background: linear-gradient(90deg, #55b9f3 0%, #489dcf 56%, #62d5ff 100%);
    font-family: 'Kufam', cursive !important;
    // color: white !important;
 }
 
 a {
-   // color: white !important;
+   color: white !important;
+}
+
+.card-link {
+   color: black;
 }
 
 a:hover {
@@ -32,15 +36,38 @@ a:hover {
    background-color: rgba(255, 255, 255, 0);
 }
 
-// -----------------------Custom styles-------------------------//
 
 .login-form {
    width: 40vw;
    margin: 0 auto;
    margin-top: 20px !important;
 }
+// -----------------------Feed styles-------------------------//
 
-// -----------------------Navbar styles-------------------------//
+.feed{
+   flex: 0.4;
+   min-width: fit-content;
+ }
+
+.post-image {
+   border-radius: 50px;
+   background: #55b9f3;
+   box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
+   width: 20vw; 
+ }
+ 
+.post {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border: 1px solid red;
+  }
+
+.avatar {
+   width: 15vw;
+   border-radius: 20px;
+}
+// ----------------------------Navbar styles-------------------------//
 
 
 nav a {
@@ -58,11 +85,17 @@ nav li {
 }
 
 form.button_to {
-  width: 80px;
+   width: 80px;
 }
 
 nav {
-   display: flex;
+   border-right: 1px solid;
+   flex: 0.3;  /* uses 30  percent of the webpage */
+
+   /* min-width: 250px; */
+   margin-top: 20px;
+   padding-left: 20px;
+   padding-right: 20px;    
 }
 
 .logo {
@@ -71,17 +104,7 @@ nav {
    box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
  }
 
-.post-image {
-  border-radius: 50px;
-  background: #55b9f3;
-  box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
-  margin-top: 50px;
-  width: 20vw; 
-}
 
-.avatar {
-   width: 15vw;
-}
 
 table.newsfeed {
   margin: 0 auto;
