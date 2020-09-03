@@ -14,13 +14,15 @@ class ApplicationController < ActionController::Base
       session[:user_id] = nil unless @current_user.present?
     end #fetch_user
 
-    def check_if_admin
-      # Check if ths user logging in is an administrator
+    # def check_if_admin
+    #   # Check if ths user logging in is an administrator
+    #
+    #   check_if_logged_in()
+    #   #
+    #   redirect_to(login_path) unless @current_user.admin?
+    # end
 
-      # check_if_logged_in()
-      #
-      redirect_to(login_path) unless @current_user.admin?
-    end
+
 
     def check_if_logged_in
       redirect_to login_path unless @current_user.present?
