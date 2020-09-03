@@ -4,7 +4,7 @@ class LikesController < ApplicationController
   # before_action :find_post
   def index
     @likes = Like.all
-    render json:Like.all
+    # render json:Like.all
   end
 
 

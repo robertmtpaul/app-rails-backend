@@ -7,7 +7,7 @@ class PostsUsersController < ApplicationController
   # GET /posts_users.json
   def index
     @posts_users = PostsUser.all
-    render json:PostsUser.all
+    # render json:PostsUser.all
   end
 
   # GET /posts_users/1

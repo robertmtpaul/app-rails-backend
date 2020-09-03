@@ -5,7 +5,7 @@ class DislikesController < ApplicationController
 
   def index
     @dislikes = Dislike.all
-    render json:Dislike.all
+    # render json:Dislike.all
   end
 
   def create
