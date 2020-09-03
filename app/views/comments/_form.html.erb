@@ -1,9 +1,6 @@
 <%= form_for([@post, @post.comments.build]) do |form| %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.select :name, options_from_collection_for_select(User.all,"name","name")%>
-  </div>
+
 
 
   <div class="field">
