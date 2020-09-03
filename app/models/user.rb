@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :post_photos
   has_many :follows
   has_many :comments, :through => :posts
-  # has_many :likes, dependent: :destroy
+  has_many :likes, dependent: :destroy
   # has_many :dislikes, dependent: :destroy
   validates :name, length: { minimum: 2, nmaximum: 20 }
   validates :email, presence: true, uniqueness: true
