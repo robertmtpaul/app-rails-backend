@@ -12,21 +12,32 @@
  */
 
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
 
 //------------------------Base styles ----------------------------//
 
  body {
-   background: linear-gradient(90deg, #55b9f3 0%, #489dcf 56%, #62d5ff 100%);
-   color: black;
+   margin-top: 20px;
+   // background: linear-gradient(90deg, #55b9f3 0%, #489dcf 56%, #62d5ff 100%);
+   font-family: 'Kufam', cursive !important;
+   // color: white !important;
 }
 
 a {
-   color: white !important;
+   // color: white !important;
 }
 
 a:hover {
    text-decoration: none !important;
    background-color: rgba(255, 255, 255, 0);
+}
+
+// -----------------------Custom styles-------------------------//
+
+.login-form {
+   width: 40vw;
+   margin: 0 auto;
+   margin-top: 20px !important;
 }
 
 // -----------------------Navbar styles-------------------------//
@@ -54,13 +65,10 @@ nav {
    display: flex;
 }
 
-nav .logo {
-   border-radius: 50px;
+.logo {
+   border-radius: 9%;
    background: #55b9f3;
    box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
-   margin-top: 50px;
-   width: 20vw;
-   
  }
 
 .post-image {
@@ -68,8 +76,7 @@ nav .logo {
   background: #55b9f3;
   box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
   margin-top: 50px;
-  width: 20vw;
-  
+  width: 20vw; 
 }
 
 .avatar {

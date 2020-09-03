@@ -40,11 +40,11 @@ puts "created #{ Follow.count } Follows."
 print "Creating Posts... "
 Post.destroy_all
 
-p1 = Post.create(user_post:"hello world 1",user_photo:"https://www.fillmurray.com/200/300")
-p2 = Post.create(user_post:"hello world 2",user_photo:"https://www.fillmurray.com/201/300")
-p3 = Post.create(user_post:"hello world 3",user_photo:"https://www.fillmurray.com/202/300")
-p4 = Post.create(user_post:"hello world 4",user_photo:"https://www.fillmurray.com/205/300")
-p5 = Post.create(user_post:"hello world 5",user_photo:"https://www.fillmurray.com/204/300")
+p1 = Post.create(user_post:"I'm baby dIY hella banh mi prism next level crucifix woke tbh. Vegan tousled fixie drinking vinegar gluten-free. Flannel listicle plaid health goth cliche. Knausgaard adaptogen bespoke sustainable blue bottle twee slow-carb organic tumeric helvetica. Cardigan polaroid vape kogi meh aesthetic edison bulb taxidermy. Kombucha wayfarers keytar sartorial YOLO.", user_photo:"https://www.fillmurray.com/200/300")
+p2 = Post.create(user_post:"Tilde blog adaptogen thundercats. Hammock small batch adaptogen godard raw denim cardigan actually. Fashion axe mlkshk man bun occupy brunch. Prism cray butcher twee, pork belly etsy lo-fi single-origin coffee. Hot chicken whatever retro occupy pabst gastropub health goth lumbersexual. Disrupt craft beer shabby chic intelligentsia roof party mlkshk tofu distillery viral kitsch leggings cred four loko humblebrag.",user_photo:"https://www.fillmurray.com/201/300")
+p3 = Post.create(user_post:"Vexillologist copper mug sustainable yuccie plaid, synth unicorn prism keffiyeh everyday carry you probably haven't heard of them. Neutra PBR&B XOXO fixie intelligentsia. Brooklyn subway tile snackwave af. Prism cred neutra migas tacos. YOLO tattooed wayfarers af, kogi mixtape four dollar toast tofu narwhal. Biodiesel selvage seitan kogi. Schlitz fashion axe marfa bushwick ugh pork belly kickstarter gentrify edison bulb dreamcatcher kale chips knausgaard.",user_photo:"https://www.fillmurray.com/202/300")
+p4 = Post.create(user_post:"Banjo cronut single-origin coffee, drinking vinegar kogi semiotics slow-carb vexillologist farm-to-table venmo shabby chic. Adaptogen squid kitsch twee, street art live-edge la croix food truck coloring book cloud bread photo booth humblebrag selvage. Copper mug umami unicorn echo park, normcore twee knausgaard fam blue bottle pok pok whatever trust fund. Semiotics bicycle rights occupy cray, normcore everyday carry fixie. DIY celiac tumeric chia vaporware blue bottle bespoke fingerstache umami glossier chambray coloring book small batch.",user_photo:"https://www.fillmurray.com/205/300")
+p5 = Post.create(user_post:"Chartreuse roof party master cleanse enamel pin aesthetic offal quinoa iPhone edison bulb palo santo snackwave hell of. Edison bulb air plant plaid cliche retro vaporware vegan, subway tile shoreditch. Typewriter pour-over portland, cronut skateboard leggings neutra next level actually you probably haven't heard of them organic direct trade palo santo. Chillwave shabby chic williamsburg thundercats literally pour-over. Selvage slow-carb shaman paleo cornhole farm-to-table. Yuccie pork belly humblebrag polaroid pabst selvage pickled everyday carry retro kitsch waistcoat.",user_photo:"https://www.fillmurray.com/204/300")
 
 u1.posts << p1
 u2.posts << p2
