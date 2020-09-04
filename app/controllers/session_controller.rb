@@ -13,7 +13,7 @@ class SessionController < ApplicationController
       # if user.admin?
         session[:user_id] = user.id
         puts "================================="
-        p session
+        p session[:user_id]
       # else
       #   # Should redirect to react login for frontend users
       #   flash[:message] = "It does not appear user is an admin"
