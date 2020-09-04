@@ -7,17 +7,22 @@
 <div class="feed">
   <% @posts.each do |post| %>
     <div class="post">
-      <div>
+      <div class="avatar-container">
         <%= link_to user_path(post.user.id) do %>
 
           <img class="avatar" src="<%= post.user.profile_pic %>" alt="<%= post.user_post %>">
         <% end%>
         <p><%= post.user.name %></p>
       </div>
-      <div class="feed_header">
+      <div>
         <p><%= post.user_post %></p>
+<<<<<<< HEAD
 
         <%= cl_image_tag(post.user_photo)  %>
+=======
+                
+        <%= cl_image_tag(post.user_photo, :class=>'post-image') %>
+>>>>>>> af34e9ef8c1375ed9397f91438cc58150ab3076d
         <p class="card-text">
           <small class="text-muted">Last updated <%= post.updated_at %></small>
         </p>
