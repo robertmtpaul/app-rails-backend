@@ -4,6 +4,7 @@ class PostPhoto < ApplicationRecord
   # has_many :likes, dependent: :destroy
   # has_many :dislikes, dependent: :destroy
   has_many :comments
+  validates_presence_of :photo
 
   def likes
     Like.where(target_id:self.id, target_type:'post_photo')

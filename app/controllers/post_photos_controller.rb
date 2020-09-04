@@ -27,7 +27,13 @@ class PostPhotosController < ApplicationController
   # POST /post_photos
   # POST /post_photos.json
   def create
-    @post_photo = PostPhoto.new(post_photo_params)
+    @post_photo = PostPhoto.new
+
+    if params[:file].present?
+      # actually forward uploaded file on to Cloudinary server
+      response = Cloudinary::Uploader.upload params[:file]
+      @post_photo.photo = response['public_id']
+    end
 
     respond_to do |format|
       if @post_photo.save

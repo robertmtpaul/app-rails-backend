@@ -25,33 +25,19 @@ class PostsController < ApplicationController
 
   # POST /posts
   # POST /posts.json
+
   def create
     @post = Post.new(post_params)
 
-    def create
-      @post = Post.new(post_params)
+    @post.user_id = @current_user.id
+    @post.save
 
-      @post.user_id = @current_user.id
-      @post.save
-     
        # Handle upload, if file was uploaded
     if params[:file].present?
       # actually forward uploaded file on to Cloudinary server
       response = Cloudinary::Uploader.upload params[:file]
-      @post.user_photo = response['public_id']      
+      @post.user_photo = response['public_id']
       @post.save
-    end
-
-
-  
-      respond_to do |format|
-        if @post.save
-          format.html { redirect_to @post, notice: 'Post was successfully created.' }
-          format.json { render :show, status: :created, location: @post }
-        else
-          format.html { render :new }
-        end
-      end
     end
 
     respond_to do |format|
@@ -62,7 +48,7 @@ class PostsController < ApplicationController
         format.html { render :new }
       end
     end
-  end
+  end #create
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json

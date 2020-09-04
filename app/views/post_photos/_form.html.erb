@@ -1,6 +1,6 @@
 <div class="form-group">
 
-  <%= form_with(model: post_photo, local: true) do |form| %>
+  <%= form_with(model: post_photo, local: true, html: {multipart: true}) do |form| %>
     <% if post_photo.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(post_photo.errors.count, "error") %> prohibited this post_photo from being saved:</h2>
@@ -15,7 +15,7 @@
 
     <div class="field">
       <%= form.label :photo %>
-      <%= form.text_field :photo %>
+        <%= cl_image_upload_tag :user_photo %>
     </div>
 
     <div class="actions">
