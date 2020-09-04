@@ -2,7 +2,7 @@
 
 <div>
   <strong>Photo:</strong>
-  <%= image_tag @post_photo.photo %>
+  <%= cl_image_tag @post_photo.photo %>
   <p><%= @post_photo.likes.count %> <%= (@post_photo.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
   <% if @post_photo.already_liked_by?(@current_user) %>
