@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Check if logged in before running actions on any controller
     skip_before_action :verify_authenticity_token
-
+    
     before_action :fetch_user
 
     def fetch_user

@@ -12,6 +12,8 @@ class SessionController < ApplicationController
       # credentials were correct and so it creates a session
       # if user.admin?
         session[:user_id] = user.id
+        puts "================================="
+        p session
       # else
       #   # Should redirect to react login for frontend users
       #   flash[:message] = "It does not appear user is an admin"
