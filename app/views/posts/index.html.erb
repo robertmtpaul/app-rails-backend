@@ -15,17 +15,16 @@
         <p><%= post.user.name %></p>
       </div>
       <div>
-        <p><%= post.user_post %></p>
-                
-        <%= cl_image_tag(post.user_photo, :class=>'post-image') %>
+      <p><%= post.user_post %></p>
+        
+        <%= link_to post_path(post.id) do %>
+          <%= cl_image_tag(post.user_photo, :class=>'post-image') %>
+        <% end %>
+
         <p class="card-text">
           <small class="text-muted">Last updated <%= post.updated_at %></small></p>
           
-        <% if @current_user.present? && @current_user.admin %>
-          <td><%= link_to 'Show', post, :class=>'btn btn-primary btn-sm' %></td>
-          <td><%= link_to 'Edit', edit_post_path(post), :class=>'btn btn-secondary btn-sm' %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger btn-sm'  %></td>
-        <% end %>
+
       </div>
     </div>
     <% end%>
