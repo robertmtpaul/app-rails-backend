@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
       if session[:user_id].present?
         @current_user = User.find_by id: session[:user_id]
       end
+      puts '********************************************************'
+      p "session_user_id", session[:user_id]
+      p @current_user
       # if we did get nil from above query, delete the session
       session[:user_id] = nil unless @current_user.present?
     end #fetch_user
