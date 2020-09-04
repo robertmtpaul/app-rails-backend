@@ -17,35 +17,35 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <%= link_to root_path do %>
-      <div>
-        <%= image_tag("logo.png", :class=>'logo') %>
-     </div>
-    <% end %> 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <%= link_to root_path do %>
+        <div>
+          <%= image_tag("logo.png", :class=>'logo') %>
+        </div>
+      <% end %> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul>
-          <li>
+      <ul>
           <% if @current_user.present? %>
+            <li>
               Hello, <%= @current_user.name %> |
-          <%= link_to 'Logout', login_path, method: 'delete' %>
-          </li>
-          <li class="nav-link">
-            <%= link_to 'FEED', posts_path %>
-          </li>
-          <li class="nav-link">
-            <%= link_to 'PHOTOS', post_photos_path %>
-          </li>
-          <li class="nav-link">
+              <%= link_to 'Logout', login_path, method: 'delete' %>
+            </li>
+            <li class="nav-link">
+              <%= link_to 'FEED', posts_path %>
+            </li>
+            <li class="nav-link">
+              <%= link_to 'PHOTOS', post_photos_path %>
+            </li>
+        <li class="nav-link">
           <%= link_to 'PROFILES', users_path %>
-          </li>
+        </li>
 
-          <%  elsif @current_user.present? && @current_user.admin === true%>
+        <%  elsif @current_user.present? && @current_user.admin === true%>
           <li class="nav-link">
-            <i class="fas fa-user-plus"></i>
+          <i class="fas fa-user-plus"></i>
             <%= link_to 'Create user', new_user_path %>
           </li>
 
