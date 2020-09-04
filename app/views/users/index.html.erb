@@ -15,12 +15,13 @@
       <div class="users-index">
 
         <% @users.each do |user| %>
-          <%= user.name %>
+          <%= user.name %>        
 
           <%= link_to user_path(user.id) do %>
 
             <img class="avatar" src="<%= user.profile_pic %>" alt="">
           <% end%>
+
         <% end %>
 
       </div>

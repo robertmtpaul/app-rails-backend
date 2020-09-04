@@ -10,44 +10,40 @@
       </ul>
     </div>
   <% end %>
-  <br>
+
   <div class="field">
     <%= form.label :Name %>
     <%= form.text_field :name, :class=>'form-control', :placeholder => 'Name' %>
   </div>
-  <br>
+
   <div class="field">
     <%= form.label :Email %>
     <%= form.text_field :email, :class=>'form-control', :placeholder => 'Email' %>
   </div>
-  <br>
+
   <div class="field">
     <%= form.label :profile_pic %>
-      <%= cl_image_upload_tag :user_photo, :class=>'form-control' %>
+      <%= cl_image_upload_tag :user_photo, :class=>'form-control profile_pic' %>
   </div>
-  <br>
+
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password, :class=>'form-control', :placeholder => 'Password'   %>
   </div>
-  <br>
   <div class="field">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, :class=>'form-control' , :placeholder => 'Confirm password'  %>
   </div>
-  <br>
 
 
-  <div class="form-group">
+  <div class="field">
     <% if @current_user.present? && @current_user.admin %>
     <%= form.label :admin %>
     <%= form.check_box :admin, :class=>'form-check-input' %>
-
     <% end %>
   </div>
-  <br>
+
   <div class="actions">
     <%= form.submit %>
-    <% end %>
   </div>
-<br>
+<% end %>
