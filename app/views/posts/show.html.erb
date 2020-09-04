@@ -1,4 +1,8 @@
 <%= link_to 'Back', posts_path %>
+<!-- Checks whether the user logged in is an admin and shows admin functionality if so.-->
+<% if @current_user.present? && @current_user.admin %>
+  <td><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger btn-sm'  %></td>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 
