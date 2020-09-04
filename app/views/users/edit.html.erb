@@ -1,7 +1,9 @@
+<br>
 <h1>Editing User</h1>
 
 <%= render 'form', user: @user %>
 
-
+<%= link_to 'Deactivate Account', method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger btn-sm'  %>|
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+<br>

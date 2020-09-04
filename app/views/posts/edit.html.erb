@@ -1,6 +1,8 @@
+<br>
 <h3>Edit Post</h3>
 
 <%= render 'form', post: @post %>
-
+<br>
 <%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path %>|
+<%= link_to 'Delete Post', method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger btn-sm'  %>

@@ -3,7 +3,6 @@
     <% if post.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
         <ul>
         <% post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,19 +10,19 @@
         </ul>
       </div>
     <% end %>
-
+    <br>
+    <br>
     <div class="field">
       <%= form.text_area :user_post, :class=>'form-control', :placeholder => 'Tell the world of your troubles here' %>
     </div>
-
-
+    <br>
+    <br>
     <div class=actions>
         <%= cl_image_upload_tag :user_photo %>
         <br>
         <br>
-      </div>
-      
-
+    </div>
+    <br>
     <div class="actions">
       <%= form.submit :class=>'btn btn-secondary' %>
     </div>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>User profiles</h1>
 
 <table>
   <thead>
@@ -12,23 +12,19 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td>  <%= cl_image_tag  user.profile_pic %></td>
-        <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%= link_to user_path(user.id) do %>
+      <div class="users-index">
 
-          <img class="avatar" src="<%= user.profile_pic %>" alt="">
-        <% end%>
-        <p><%= user.name %></p>
-      </tr>
-    <% end %>
-  </tbody>
+        <% @users.each do |user| %>
+          <%= user.name %>        
+
+          <%= link_to user_path(user.id) do %>
+
+            <img class="avatar" src="<%= user.profile_pic %>" alt="">
+          <% end%>
+
+        <% end %>
+
+      </div>
 </table>
 
 <br>
