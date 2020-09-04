@@ -10,6 +10,7 @@ class User < ApplicationRecord
   # has_many :dislikes, dependent: :destroy
   validates :name, length: { minimum: 2, nmaximum: 20 }
   validates :email, presence: true, uniqueness: true
+  validates_presence_of :profile_pic
   private
 
 
@@ -18,7 +19,7 @@ class User < ApplicationRecord
   has_many :following, through: :followed_users, source: 'followed'
 
   has_many :following_users,  class_name: 'Follow', foreign_key: :followed_id, dependent: :destroy
-  
+
   has_many :followers, through: :following_users, source: 'follower'
 
 

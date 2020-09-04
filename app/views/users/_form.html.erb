@@ -1,4 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with(model: user, local: true, html: {multipart: true}) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -12,16 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :Name %>
     <%= form.text_field :name, :class=>'form-control', :placeholder => 'Name' %>
   </div>
 
   <div class="field">
-    <%= form.text_field :email, :class=>'form-control', :placeholder => 'Name' %>
+    <%= form.label :Email %>
+    <%= form.text_field :email, :class=>'form-control', :placeholder => 'Email' %>
   </div>
 
   <div class="field">
     <%= form.label :profile_pic %>
-    <%= form.text_field :profile_pic, :class=>'form-control', :placeholder => 'Profile picture URL' %>
+      <%= cl_image_upload_tag :user_photo, :class=>'form-control' %>
   </div>
 
   <div class="field">
