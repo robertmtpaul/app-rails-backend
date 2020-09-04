@@ -53,9 +53,9 @@ a:hover {
    align-self: center;
    background: #55b9f3;
    box-shadow:  11px -11px 55px #2b5e7c,-11px 11px 55px #7fffff;
-   width: 20vw; 
+   width: 10vw;
  }
- 
+
 .creation {
    margin-bottom: 10px;
 }
@@ -112,7 +112,7 @@ nav {
    /* min-width: 250px; */
    margin-top: 20px;
    padding-left: 20px;
-   padding-right: 20px;    
+   padding-right: 20px;
 }
 
 form.button_to {
@@ -137,4 +137,12 @@ td {
 //   border: 1px solid red;
   width: 30vw;
   height: 100vh;
+}
+
+input.form-check-input {
+  margin-left: 10px;
+}
+
+div.users-index {
+  width: 5vw;
 }
