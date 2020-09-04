@@ -15,17 +15,23 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+<<<<<<< HEAD
         <td><%= user.name %></td>
-        <td><img src="<%= user.profile_pic %>" alt="profile_pic"></td>
+        <td>  <%= cl_image_tag  user.profile_pic %></td>
         <td><%= user.admin %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+=======
+        <%= link_to user_path(user.id) do %>
+
+          <img class="avatar" src="<%= user.profile_pic %>" alt="">
+        <% end%>
+        <p><%= user.name %></p>
+>>>>>>> 130dc31d861aa75d7b0b3cce6d1beccb5cf2f64a
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>
