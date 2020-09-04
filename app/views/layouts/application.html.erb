@@ -50,11 +50,15 @@
           </li>
 
           <% else %>
+          <li class="nav-link">
+            <%= link_to 'LOGIN', login_path %>
+          </li>
            <li class="nav-link">
             <%= link_to 'FEED', posts_path %>
           </li>
           <li class="nav-link">
             <%= link_to 'PHOTOS', post_photos_path %>
+          </li>
           </li>
         </ul>
         <% end %>
