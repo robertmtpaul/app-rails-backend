@@ -4,9 +4,13 @@
 </div>
 <br>
 <div class="feed">
+  <%#  Loops through each post, @posts can be foudn in the controller action 'index' for posts, and inside the loop we use the association of the post to the user it belongs to, to print out some information about the user who made the post(e.g. post.user.name, id.. profile_photo 01) and also the content o fhte post : post.user_post 
+  TODO : remove user_ prefix from post fields. 
+  %>
   <% @posts.each do |post| %>
     <div class="post">
       <div class="avatar-container">
+      <%# Print link to user's profile page.       %>
         <%= link_to user_path(post.user.id) do %>
           <img class="avatar" src="<%= post.user.profile_pic %>" alt="<%= post.user_post %>">
         <% end%>
@@ -14,9 +18,9 @@
       </div>
       <div>
         <p><%= post.user_post %></p>
-
+      <%# Added link to the show page for the particular post, post_path helper generates a link like "/posts/:id" handled by posts#show  %>
           <%= link_to post_path(post.id) do %>
-          <%= cl_image_tag(post.user_photo, :class=>'post-image') %>
+            <%= cl_image_tag(post.user_photo, :class=>'post-image') %>
           <% end %>
         <p class="card-text">
           <small class="text-muted">Last updated <%= post.updated_at %></small>
@@ -24,26 +28,30 @@
       </div>
 
     </div>
-    <div class="likes-posts">
-      <%= post.likes.count %> <%= (post.likes.count) == 1 ? '' : ''%>
-      :
-      <% if post.already_liked_by?(@current_user) %>
-        <%= button_to 'Unlike', likes_path, method: :delete, params: {target_type:'post', target_id:post.id} %>
-      <% else %>
-        <%= button_to 'Like', likes_path, method: :post, params: {target_type:'post', target_id:post.id} %>
-      <% end %>
 
-      <%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? '' : ''%>
-      :
-      <% if post.already_disliked_by?(@current_user) %>
-        <%= button_to 'Undislike', dislikes_path, method: :delete, params: {target_type:'post', target_id:post.id} %>
-      <% else %>
-        <%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post', target_id:post.id} %>
-      <% end %>
-      <br>
-      <br>
-      <br>
-      <br>
+    <% if @current_user.present? %>
+
+      <%# Displays the number of likes for the particular post. %>
+      <div class="likes-posts">
+        <%= post.likes.count %> 
+        :
+        <%# If post has already been liked or disliked, displays an unlike or like button respectively %>
+        <% if post.already_liked_by?(@current_user) %>
+          <%= button_to 'Unlike', likes_path, method: :delete, params: {target_type:'post', target_id:post.id} %>
+        <% else %>
+        <%# If post has been unliked, displays like button %>
+          <%= button_to 'Like', likes_path, method: :post, params: {target_type:'post', target_id:post.id} %>
+        <% end %>
+        <%# Shows number of dislikes %>
+        <%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? '' : ''%>
+        :
+
+        <% if post.already_disliked_by?(@current_user) %>
+          <%= button_to 'Undislike', dislikes_path, method: :delete, params: {target_type:'post', target_id:post.id} %>
+        <% else %>
+          <%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post', target_id:post.id} %>
+        <% end %>
+    <% end %>
     </div>
   <% end%>
 </div>

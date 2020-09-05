@@ -35,12 +35,6 @@
 <%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post', target_id:@post.id} %>
 <% end %>
 
-<div id="all-links">
-  <% if @post.user_id == @current_user.id %>
-    <%= link_to "Edit Post", edit_post_path, method: :GET %>
-  <% end %>
-  <br>
-</div>
 
 
 <br>
