@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_logged_in, except: [:show, :index ]
+  # before_action :check_if_logged_in, except: [:show, :index ]
   # GET /posts
   # GET /posts.json
   def index
@@ -28,8 +28,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
-    @post.user_id = @current_user.id
+    # TODO remove this security nightmare
+    # only here for testing react frontend beofre logins working
+    if @current_user.present? 
+      @post.user_id = @current_user.id 
+    else 
+      ## hard-coded userid for react
+      @post.user_id = User.first.id 
+    end
     @post.save
 
        # Handle upload, if file was uploaded
@@ -43,7 +49,11 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        format.json { render json: {
+          post: @post,
+          success: true
+        } 
+      }
       else
         format.html { render :new }
       end
@@ -82,6 +92,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:user_post, :user_id, :likes, :dislike)
+      params.require(:post).permit(:user_post, :user_photo)
     end
 end

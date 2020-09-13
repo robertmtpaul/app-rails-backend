@@ -1,3 +1,4 @@
+<br>
 <%= link_to 'Back', posts_path %>
 <!-- Checks whether the user logged in is an admin and shows admin functionality if so.-->
 <% if @current_user.present? && @current_user.admin %>
@@ -20,8 +21,11 @@
   <%= @post.user.name %>
 </p>
 
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<%# Show number of likes for the page and pluralizes 'like' using the ruby inbuilt function %>
+<p><%= @post.likes.count 'Like'.pluralize %>
 
+ <%= (@post.likes.count) == 1 ? 'Like' : 'Like'.pluralize %></p>
+<%#  %>
 <% if @post.already_liked_by?(@current_user) %>
   <%= button_to 'Unlike', likes_path, method: :delete, params: {target_type:'post', target_id:@post.id} %>
 <% else %>
@@ -34,18 +38,13 @@
 <% else %>
 <%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post', target_id:@post.id} %>
 <% end %>
+<hr/>
 
-
-
-<br>
 <div>
-  <p><strong><%= @post.comments.count %></strong> Comments</p>
+  <p><strong><%= @post.comments.count%></strong> Comments</p>
   <%= render @post.comments %>
-  <div>
-    <div class="col-7">
-      <hr />
-      <p class="subtitle is-3">Add a comment<p>
-        <%= render 'comments/form' %>
-    </div>
+  <div class="col-7">
+    <p class="subtitle is-3">Add a comment<p>
+      <%= render 'comments/form' %>
   </div>
 </div>

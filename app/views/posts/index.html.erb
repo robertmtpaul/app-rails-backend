@@ -4,7 +4,7 @@
 </div>
 <br>
 <div class="feed">
-  <%#  Loops through each post, @posts can be foudn in the controller action 'index' for posts, and inside the loop we use the association of the post to the user it belongs to, to print out some information about the user who made the post(e.g. post.user.name, id.. profile_photo 01) and also the content o fhte post : post.user_post 
+  <%#  Loops through each post, @posts can be found in the controller action 'index' for posts, and inside the loop we use the association of the post to the user it belongs to, to print out some information about the user who made the post(e.g. post.user.name, id.. profile_photo 01) and also the content o fhte post : post.user_post 
   TODO : remove user_ prefix from post fields. 
   %>
   <% @posts.each do |post| %>
@@ -29,6 +29,7 @@
 
     </div>
 
+    <%# Like, dislike buttons shouldn't show unless user is logged in: %>
     <% if @current_user.present? %>
 
       <%# Displays the number of likes for the particular post. %>
@@ -51,6 +52,10 @@
         <% else %>
           <%= button_to 'Dislike', dislikes_path, method: :post, params: {target_type:'post', target_id:post.id} %>
         <% end %>
+    
+        <div class="comments">
+        <%= render post.comments %>
+        </div>
     <% end %>
     </div>
   <% end%>
