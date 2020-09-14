@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   # Check if logged in before running actions on any controller
     skip_before_action :verify_authenticity_token
 
+    include Knock::Authenticable
+
     before_action :fetch_user
 
     def fetch_user
@@ -10,7 +12,7 @@ class ApplicationController < ActionController::Base
       if session[:user_id].present?
         @current_user = User.find_by id: session[:user_id]
       end
-      puts '********************************************************'
+      puts '*****************************************************************************************'
       p "session_user_id", session[:user_id]
       p @current_user
       # if we did get nil from above query, delete the session

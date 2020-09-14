@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :check_if_logged_in, except: [:new, :create]
   # before_action :check_if_admin, except: [:show, :new, :edit, :update, :destroy]
 
+  def current
+    render json: current_user
+  end
+
   def follow
     @user = User.find(params[:id])
     @current_user.following << @user

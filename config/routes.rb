@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+
+  # Get login token from Knock
   post 'user_token' => 'user_token#create'
+
+  #User routes
+  get '/user/current' => 'users#current'
+
   resources :post_photos_users
   root to: "posts#index"
 
