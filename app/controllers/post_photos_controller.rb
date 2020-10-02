@@ -27,17 +27,41 @@ class PostPhotosController < ApplicationController
   # POST /post_photos
   # POST /post_photos.json
   def create
-    @post_photo = PostPhoto.new
 
-    if params[:file].present?
-      # actually forward uploaded file on to Cloudinary server
-      response = Cloudinary::Uploader.upload params[:file]
-      @post_photo.photo = response['public_id']
-    end
+      if params[:images].present?
+        params[:images].each do |image|
+          req = Cloudinary::Uploader.upload(image)
+          p image
+          p req
+          @post_photo = PostPhoto.new
+          @post_photo.photo = req['public_id']
+          if params[:post][:id].present?
+            @post_photo.post_id = params[:post][:id]
+          end
+          @post_photo.user_id = @current_user.id
+          puts "??????????????????????????????????????????????POST PHOTO????????????????????"
+          p @post_photo
+
+          @post_photo.save
+
+          #TODO check whether each photo actually saved.
+        end
+      end
+
 
     respond_to do |format|
-      if @post_photo.save
-        format.html { redirect_to @post_photo, notice: 'Post photo was successfully created.' }
+      if @post_photo.persisted?
+        format.html do
+          if params[:post][:id].present?
+            #if a post id was specified in the form drop down, We assume that multiple photos were uploaded
+            #so we redirect to the parent post show page of those photos.
+            redirect_to post_path(params[:post][:id]), notice: 'Photos successfully added to Post.'
+          else
+            #if no post id was specified we assume this was a standalone photo upload without a parent post,
+            #so we redirect to the photo show page.
+            redirect_to @post_photo, notice: 'Post photo was successfully created.'
+          end
+        end
         format.json { render :show, status: :created, location: @post_photo }
       else
         format.html { render :new }

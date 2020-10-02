@@ -10,9 +10,9 @@
       <div>
         <p><%= post_photo.user.name %></p>
       </div>
-      <%= link_to post_photo_path(post_photo.id) do %>
-        <%= image_tag post_photo.photo %>
-      <% end %>
+      <div class="feed_header">
+        <%= cl_image_tag post_photo.photo %>
+
         <p class="card-text">
           <small class="text-muted">Last updated <%= post_photo.updated_at %></small>
         </p>

@@ -14,8 +14,14 @@
     <% end %>
 
     <div class="field">
+      <%= label_tag :post %>
+        <%= collection_select(:post, :id, @current_user.posts, :id, :user_post, prompt: true) %>
+    </div>
+
+    <div class="field">
       <%= form.label :photo %>
-        <%= cl_image_upload_tag :user_photo %>
+        <%# cl_image_upload_tag :user_photo %>
+        <%= file_field_tag "images[]", :multiple => true %>
     </div>
 
     <div class="actions">
